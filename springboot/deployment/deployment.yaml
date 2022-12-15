@@ -18,9 +18,9 @@ spec:
     spec:
       containers:
         - name: java-sre-monitor
-          image: 'quay.io/vishwajitdandage/sre:java-1'
+          image: 'docker.io/amishark/springbootapp:v1'
           ports:
-            - containerPort: 3000
+            - containerPort: 8080
               protocol: TCP
           resources: {}
           terminationMessagePath: /dev/termination-log
@@ -47,8 +47,8 @@ spec:
   ports:
     - name: 9080-metrics
       protocol: TCP
-      port: 9080
-      targetPort: 9080
+      port: 8080
+      targetPort: 8080
   selector:
     app: sre-java
 ---
